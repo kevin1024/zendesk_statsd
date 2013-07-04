@@ -33,7 +33,7 @@ Refer to `exampleConfig.json` for an example config file.
 ## License (MIT)
 The MIT License (MIT)
 
-Copyright (c) <year> <copyright holders>
+Copyright (c) 2013 Kevin McCarthy
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy
