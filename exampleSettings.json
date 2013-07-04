@@ -1,0 +1,10 @@
+{
+  "zendeskHostname": "somebody.zendesk.com",
+  "zendeskUsername": "me@kevinmccarthy.org",
+  "zendeskToken": "abcdefyoursecrettoken",
+  "statsdServer": "statserver.whatever.com",
+  "viewsToStats": {
+    "12345678": "groups.support.count",
+    "25873948": "agents.kevin.solved_last_hour",
+  }
+}
