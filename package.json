@@ -1,0 +1,26 @@
+{
+  "name": "zendesk_statsd",
+  "version": "0.0.1",
+  "description": "Simple node.js process that sends Zendesk view counts to StatsD periodically",
+  "main": "zendesk_statsd.js",
+  "dependencies": {
+    "lynx": "~0.0.11",
+    "nconf": "~0.6.7",
+    "node-logging": "~0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevin1024/zendesk_statsd"
+  },
+  "keywords": [
+    "zendesk",
+    "statsd"
+  ],
+  "author": "Kevin McCarthy",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
