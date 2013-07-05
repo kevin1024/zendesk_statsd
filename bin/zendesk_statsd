@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+require('../zendesk_statsd.js');
