@@ -30,6 +30,12 @@ Now for the exciting list of settings:
 
 Refer to `exampleConfig.json` for an example config file.
 
+
+## Changelog
+
+* 0.0.2 - Add bin/zendesk_statsd executable for easier deployment
+* 0.0.1 - Initial Release
+
 ## License (MIT)
 The MIT License (MIT)
 
