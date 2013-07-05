@@ -1,6 +1,6 @@
 {
   "name": "zendesk_statsd",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple node.js process that sends Zendesk view counts to StatsD periodically",
   "main": "zendesk_statsd.js",
   "dependencies": {
