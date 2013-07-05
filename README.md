@@ -15,20 +15,31 @@ Configuration is either loaded by a `settings.json` in the current directory, or
 
 Now for the exciting list of settings:
 
-* statsdPort 
-* statsdServer
-* statsdPrefix
-* logLevel
-* statsdPrefix
-* interval
-* zendeskUsername
-* zendeskToken
-* zendeskHostname
-* logLevel
-* interval
-* viewsToStats
+### Required Settings
 
-Refer to `exampleConfig.json` for an example config file.
+These have to be set before zendesk_statsd will run
+
+* zendeskHostname - Set it to your Zendesk subdomain, example "yoursubdomain.zendesk.com"
+* zendeskToken - Find this in Settings -> Channels -> API on your Zendesk dashboard
+* zendeskUsername - You use this to log in to Zendesk.  It looks like an email address.
+* viewsToStats - This is a javascript object mapping Zendesk view IDs (numeric strings) to StatsdD keys (also strings).  Example:
+
+```json
+{
+  "12345":"myawesomeview.count",
+  "5678":"anotherawesomeview.count"
+}
+```
+
+### Optional Settings
+
+* interval - Number of *milliseconds* between Zendesk pulls + StatsD pushes.  Defaults to 1 minute, which is probably too short.  Keep in mind that Zendesk will rate limit you.
+* logLevel - How verbose zendesk_statsd will be.  Defaults to `debug`, but other log levels include: `info`, `warning`, and `error`
+* statsdPort  - Defaults to 8125
+* statsdPrefix - Automatically prefixed to all your stats you send over.  Defaults to "zendesk"
+* statsdServer - Address of your StatsD server.  Defaults to "localhost"
+
+Refer to [exampleSettings.json](exampleSettings.json) for an example config file.
 
 
 ## Changelog
