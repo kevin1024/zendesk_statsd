@@ -3,25 +3,28 @@ var lynx = require('lynx');
 var nconf = require('nconf');
 var logging = require('node-logging');
 
+var metrics;
 
-//Load configuration information
-nconf.file('settings.json')
-  .env();
+var loadConfig = function(filename) {
+  nconf.file(filename)
+    .env();
 
-nconf.defaults({
-  statsdPort: 8125,
-  statsdServer: 'localhost',
-  logLevel: 'debug',
-  statsdPrefix: 'zendesk',
-  interval: 60000,
-});
+  nconf.defaults({
+    statsdPort: 8125,
+    statsdServer: 'localhost',
+    logLevel: 'debug',
+    statsdPrefix: 'zendesk',
+    interval: 60000,
+  });
 
-logging.setLevel(nconf.get('logLevel'));
+  logging.setLevel(nconf.get('logLevel'));
 
-var metrics = new lynx(
-  nconf.get('statsdServer'),
-  nconf.get('statsdPort')
-);
+  metrics = new lynx(
+    nconf.get('statsdServer'),
+    nconf.get('statsdPort')
+  );
+};
+
 
 var getCounts = function(cb) {
   var options = {
@@ -64,6 +67,11 @@ var checkConfig = function() {
 }
 
 var main = function() {
+  var filename = 'settings.json';
+  if (process.argv.length === 3) {
+    filename = process.argv[2];
+  }
+  loadConfig(filename);
   checkConfig();
   sendStats();
   setInterval(sendStats, nconf.get('interval'));

@@ -7,7 +7,7 @@ Have you ever wanted a graph of how many tickets you have in your ZenDesk views?
 You need to have [StatsD](https://github.com/etsy/statsd/) running somewhere accessible, and have a ZenDesk account.  You will also need your Zendesk API key, which you can find in Settings -> Channels -> API
 
 1. Put things in settings.json.  
-2. Run with: `node zendesk_statsd.js`
+2. Run with: `node zendesk_statsd.js settings.json` 
 
 ## Configuration Options
 
@@ -44,6 +44,7 @@ Refer to [exampleSettings.json](exampleSettings.json) for an example config file
 
 ## Changelog
 
+* 0.0.3 - Add ability to pass the location of the config file to the process
 * 0.0.2 - Add bin/zendesk_statsd executable for easier deployment
 * 0.0.1 - Initial Release
 
